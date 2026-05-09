@@ -28,7 +28,7 @@ Before each problem, ask yourself:
 
 ### Monday — Easy Arrays
 
-- [ ] **Morning Review (20 min):** You're starting fresh — read the *How to Identify the Right Algorithm* section above. Write down in your own words what an array is and why indexing is O(1). Recall the brute-force O(n²) approach to finding a pair.
+- [ ] **Morning Review (20 min):** Step 1: Re-read the *How to Identify the Right Algorithm* section above. Step 2: Write one plain-English sentence for what an array is. Step 3: Write why indexing is O(1): you can jump straight to an address instead of scanning. Step 4: Warm up by describing the brute-force O(n²) way to check every pair.
 
 **Today's Problems:**
 - [ ] [Two Sum](https://leetcode.com/problems/two-sum/) *(Easy)* — Hash map to find complement in one pass.
@@ -41,7 +41,7 @@ Before each problem, ask yourself:
 
 ### Tuesday — Easy Arrays
 
-- [ ] **Morning Review (20 min):** Re-solve Two Sum from yesterday from memory (no peeking). Write out: input → hash map lookup → output. Note: what happens if there are duplicate values?
+- [ ] **Morning Review (20 min):** Step 1: Re-solve Two Sum from memory without peeking. Step 2: Write the flow as `input -> store seen number -> check complement -> return indices`. Step 3: Say out loud what the hash map stores. Step 4: Check the duplicate case and explain why seeing the first copy is what lets the second copy finish the answer.
 
 **Today's Problems:**
 - [ ] [Move Zeroes](https://leetcode.com/problems/move-zeroes/) *(Easy)* — Two pointers: one writes non-zero values, one scans ahead.
@@ -54,7 +54,7 @@ Before each problem, ask yourself:
 
 ### Wednesday — Two Pointer (Easy)
 
-- [ ] **Morning Review (20 min):** Rewrite Move Zeroes from memory. Then write out the general two-pointer template: `left = 0, right = n-1; while left < right: ...`. Understand when to move each pointer.
+- [ ] **Morning Review (20 min):** Step 1: Rewrite Move Zeroes from memory. Step 2: Label what each pointer means before you start. Step 3: Write the general two-pointer template and mark which pointer scans and which pointer writes. Step 4: For each pointer move, explain what new information you learned that made that move safe.
 
 **Today's Problems:**
 - [ ] [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) *(Easy)* — Skip non-alphanumeric; compare chars from both ends.
@@ -67,7 +67,7 @@ Before each problem, ask yourself:
 
 ### Thursday — Two Pointer (Medium)
 
-- [ ] **Morning Review (20 min):** Write out the two-pointer template for a sorted array. Recall Valid Palindrome. Then think: how would you extend Two Sum to handle a sorted input? How about finding *three* numbers that sum to zero?
+- [ ] **Morning Review (20 min):** Step 1: Write the two-pointer template for a sorted array. Step 2: Recall Valid Palindrome and name the rule for moving `left` or `right`. Step 3: Apply that same idea to sorted Two Sum: if the sum is too small, move left; if too big, move right. Step 4: For 3Sum, say the next step after sorting: fix one number, then run the same Two Sum logic on the rest.
 
 **Today's Problems:**
 - [ ] [3Sum](https://leetcode.com/problems/3sum/) *(Medium)* — Sort first, then fix one element and use two pointers on the rest. Skip duplicates carefully.
@@ -79,7 +79,7 @@ Before each problem, ask yourself:
 
 ### Friday — Two Pointer (Medium)
 
-- [ ] **Morning Review (20 min):** Redo Container With Most Water from scratch (5 min). Then review: what does it mean for an algorithm to be greedy? Two-pointer on Container is a greedy choice — moving the shorter wall is always at least as good as moving the taller one.
+- [ ] **Morning Review (20 min):** Step 1: Redo Container With Most Water from scratch in 5 minutes. Step 2: Define `area = width * shorter wall`. Step 3: Ask which part of the formula can improve after moving one pointer. Step 4: Rationalize the greedy rule: moving the taller wall keeps the shorter wall as the bottleneck, so only moving the shorter wall gives you a chance to improve.
 
 **Today's Problems:**
 - [ ] [Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) *(Medium)* — Two pointers with an N-step gap; when fast reaches end, slow is at target.
@@ -91,7 +91,7 @@ Before each problem, ask yourself:
 
 ### Saturday — Two Pointer (Hard)
 
-- [ ] **Morning Review (20 min):** Write out Sort Colors from memory. Think about the harder version: what if there were 4 colors? Review your time/space complexity notes from the week.
+- [ ] **Morning Review (20 min):** Step 1: Write the Dutch National Flag pointers `low`, `mid`, and `high`. Step 2: State the invariant: left side is 0s, middle is 1s, right side is 2s, and only the middle-right region is still unknown. Step 3: Ask what changes with 4 colors: one middle bucket is no longer enough to separate everything in one simple pass. Step 4: Rationalize a beginner-friendly next move: either add another pass to place the extra color, or count each color first and overwrite the array. Step 5: Review this week's time/space notes and compare why the original 3-color version can stay in one pass with O(1) extra space.
 
 **Today's Problems:**
 - [ ] [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) *(Hard)* — For each position, water level = `min(maxLeft, maxRight) - height[i]`. Two pointers avoid the O(n) extra arrays.
@@ -102,7 +102,7 @@ Before each problem, ask yourself:
 
 ### Sunday — Week 1 Review
 
-- [ ] **Morning Review (20 min):** Skim your notes/solutions from Mon–Sat. Identify the 2 problems you found hardest.
+- [ ] **Morning Review (20 min):** Step 1: Skim your notes from Mon–Sat. Step 2: Circle the 2 problems where you hesitated the most. Step 3: For each one, write the pattern name before looking at code. Step 4: Write one sentence about what cue should have told you to use that pattern sooner.
 
 **Tasks:**
 - [ ] Re-solve your 2 hardest problems from scratch (no looking at previous solution).
@@ -125,7 +125,7 @@ Before each problem, ask yourself:
 
 ### Monday — Sliding Window Fixed (Easy)
 
-- [ ] **Morning Review (20 min):** Recall last week's two-pointer technique. Notice the similarity: a fixed-size window is just two pointers exactly `k` apart. Write out: *"Instead of recomputing the sum from scratch, I add the new element entering the window and subtract the one leaving."*
+- [ ] **Morning Review (20 min):** Step 1: Recall last week's two-pointer technique. Step 2: Draw two pointers exactly `k` apart and label that range as the window. Step 3: Write the sentence `add the new element entering, subtract the old element leaving`. Step 4: Explain why that turns repeated O(k) work into O(1) work per move.
 
 **Today's Problems:**
 - [ ] [Maximum Average Subarray I](https://leetcode.com/problems/maximum-average-subarray-i/) *(Easy)* — Maintain a running sum; slide the window one step at a time.
@@ -136,7 +136,7 @@ Before each problem, ask yourself:
 
 ### Tuesday — Sliding Window Variable (Easy/Medium)
 
-- [ ] **Morning Review (20 min):** Rewrite Maximum Average Subarray I from memory. Then think: what if the window size isn't fixed but depends on a condition? How would you know when to shrink the window?
+- [ ] **Morning Review (20 min):** Step 1: Rewrite Maximum Average Subarray I from memory. Step 2: Point to the line where the window grows to the right. Step 3: Ask what would force the window to shrink if the size were not fixed. Step 4: Answer in plain English: shrink when the current window breaks the rule you need to maintain.
 
 **Today's Problems:**
 - [ ] [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) *(Medium)* — Expand right; when a duplicate enters, shrink from the left until no duplicate.
@@ -147,7 +147,7 @@ Before each problem, ask yourself:
 
 ### Wednesday — Sliding Window (Medium)
 
-- [ ] **Morning Review (20 min):** Write the variable sliding window template from memory. Then think about the "at most K distinct elements" pattern — how does that differ from "no duplicates"?
+- [ ] **Morning Review (20 min):** Step 1: Write the variable sliding window template from memory. Step 2: Mark where the right pointer expands the window. Step 3: Mark where the left pointer shrinks it. Step 4: Compare the rules: `no duplicates` means every count must stay at 1 or less, while `at most K distinct` means the number of keys in the map must stay at K or less.
 
 **Today's Problems:**
 - [ ] [Fruit Into Baskets](https://leetcode.com/problems/fruit-into-baskets/) *(Medium)* — At most 2 distinct values in window; use a frequency map to track counts and shrink when `len(map) > 2`.
@@ -159,7 +159,7 @@ Before each problem, ask yourself:
 
 ### Thursday — Sliding Window (Medium/Hard)
 
-- [ ] **Morning Review (20 min):** Re-read your Minimum Window plan from yesterday. Recall the two-pointer/sliding window template. Think about what "have" vs "need" means in the context of character frequencies.
+- [ ] **Morning Review (20 min):** Step 1: Re-read your Minimum Window plan from yesterday. Step 2: List the characters you need and their required counts. Step 3: Define `have` as how many requirements are currently satisfied. Step 4: Define `need` as how many total requirements must be satisfied before you can shrink the window.
 
 **Today's Problems:**
 - [ ] [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/) *(Hard)* — Track `need` (frequency of chars in `t`) and `have` (how many chars currently satisfied). Shrink window when all chars are covered.
@@ -171,7 +171,7 @@ Before each problem, ask yourself:
 
 ### Friday — Prefix Sum (Easy/Medium)
 
-- [ ] **Morning Review (20 min):** Recall the sliding window pattern. Now think about a different approach: what if you precompute `prefix[i] = sum of first i elements`? Then `sum(l, r) = prefix[r+1] - prefix[l]` in O(1). Write that formula.
+- [ ] **Morning Review (20 min):** Step 1: Recall that sliding window works when the subarray is contiguous and the window moves gradually. Step 2: Ask what to do if you need many random range sums. Step 3: Write `prefix[i] = sum of first i elements`. Step 4: Derive `sum(l, r) = prefix[r+1] - prefix[l]` and explain that the subtraction removes everything before `l`.
 
 **Today's Problems:**
 - [ ] [Range Sum Query - Immutable](https://leetcode.com/problems/range-sum-query-immutable/) *(Easy)* — Build `prefix` array in constructor; answer each query in O(1).
@@ -183,7 +183,7 @@ Before each problem, ask yourself:
 
 ### Saturday — Hard Sliding Window
 
-- [ ] **Morning Review (20 min):** Write the sliding window template and the prefix sum formula from memory. Review Subarray Sum Equals K — make sure you can explain the hash map approach without looking.
+- [ ] **Morning Review (20 min):** Step 1: Write the sliding window template from memory. Step 2: Write the prefix sum formula from memory. Step 3: For Subarray Sum Equals K, say the key sentence: if `currentPrefix - oldPrefix = k`, then the numbers between them sum to `k`. Step 4: Explain that the hash map stores how many times each older prefix has appeared.
 
 **Today's Problems:**
 - [ ] [Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/) *(Hard)* — Use a **monotonic deque**: maintain indices in decreasing order of their values. The front of the deque is always the max of the current window.
@@ -194,7 +194,7 @@ Before each problem, ask yourself:
 
 ### Sunday — Week 2 Review
 
-- [ ] **Morning Review (20 min):** Skim your Week 2 solutions. Pick the 2 you found hardest.
+- [ ] **Morning Review (20 min):** Step 1: Skim your Week 2 solutions. Step 2: Pick the 2 that still feel shaky. Step 3: For each one, write whether it was fixed window, variable window, or prefix sum. Step 4: Write one trigger phrase that should make you think of that pattern next time.
 
 **Tasks:**
 - [ ] Re-solve your 2 hardest Week 2 problems from scratch.
@@ -218,7 +218,7 @@ Before each problem, ask yourself:
 
 ### Monday — Stack (Easy)
 
-- [ ] **Morning Review (20 min):** Recall last week's monotonic deque. Write out the difference between a stack (LIFO) and a queue (FIFO). Think: when is "most recent item" useful? (undo, matching brackets, backtracking). Write the Python/JS stack operations: push (append), pop, peek (stack[-1]).
+- [ ] **Morning Review (20 min):** Step 1: Write the difference between a stack (LIFO) and a queue (FIFO). Step 2: Name one situation where only the most recent item matters, like matching brackets. Step 3: Write the basic stack operations in your language. Step 4: Say why a stack is a good fit whenever you need to undo or close the latest unfinished thing first.
 
 **Today's Problems:**
 - [ ] [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/) *(Easy)* — Push open brackets; when a close bracket appears, check top of stack matches.
@@ -231,7 +231,7 @@ Before each problem, ask yourself:
 
 ### Tuesday — Stack (Medium)
 
-- [ ] **Morning Review (20 min):** Re-solve Valid Parentheses from memory. Think about what "monotonic" means: a monotonic increasing stack pops whenever a smaller element arrives. Why is this useful for "next greater element" style problems?
+- [ ] **Morning Review (20 min):** Step 1: Re-solve Valid Parentheses from memory. Step 2: Define `monotonic` in one sentence: the stack keeps values in sorted order. Step 3: For an increasing stack, say when you pop: when a smaller value arrives. Step 4: Connect that to next-greater problems by explaining that popped items were waiting for the first value that breaks the old order.
 
 **Today's Problems:**
 - [ ] [Daily Temperatures](https://leetcode.com/problems/daily-temperatures/) *(Medium)* — Monotonic decreasing stack of indices; pop when a warmer day arrives.
@@ -243,7 +243,7 @@ Before each problem, ask yourself:
 
 ### Wednesday — Monotonic Stack (Medium)
 
-- [ ] **Morning Review (20 min):** Re-write Daily Temperatures from memory. State the monotonic stack invariant: *"when processing element i, pop all indices j where nums[j] < nums[i] — those have found their answer."*
+- [ ] **Morning Review (20 min):** Step 1: Re-write Daily Temperatures from memory. Step 2: State the invariant: the stack holds indices that still need a warmer day. Step 3: When a warmer day appears, pop and fill in that answer immediately. Step 4: Explain why each index is pushed once and popped once, which is what keeps the solution linear.
 
 **Today's Problems:**
 - [ ] [Next Greater Element I](https://leetcode.com/problems/next-greater-element-i/) *(Easy)* — Process `nums2` with a monotonic stack to build a map of next-greater; then look up each element of `nums1`.
@@ -255,7 +255,7 @@ Before each problem, ask yourself:
 
 ### Thursday — Monotonic Stack (Hard)
 
-- [ ] **Morning Review (20 min):** Re-read your notes on the monotonic stack invariant. Now think: could you apply it to 2D? In a histogram, each bar's "width" is how far left and right it can extend — sounds like "previous smaller" and "next smaller" elements.
+- [ ] **Morning Review (20 min):** Step 1: Re-read your monotonic stack notes. Step 2: Draw three histogram bars and focus on one middle bar. Step 3: Ask how far that bar can extend before it hits a smaller bar on the left and right. Step 4: Notice that this is the same `previous smaller / next smaller` idea, just used to compute width instead of waiting time.
 
 **Today's Problems:**
 - [ ] [Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/) *(Hard)* — Monotonic increasing stack. When a shorter bar is found, pop and compute the rectangle with the popped bar as the shortest.
@@ -266,7 +266,7 @@ Before each problem, ask yourself:
 
 ### Friday — Queue/Deque (Easy/Medium)
 
-- [ ] **Morning Review (20 min):** Recall last week's Sliding Window Maximum (monotonic deque). Write the difference: a monotonic *stack* is LIFO; a monotonic *deque* allows popping from both ends. Write out the queue operations: enqueue (append right), dequeue (pop left).
+- [ ] **Morning Review (20 min):** Step 1: Recall Sliding Window Maximum. Step 2: Write the difference between a monotonic stack and a monotonic deque. Step 3: Write the basic deque operations: append right, pop right, pop left. Step 4: Explain why a window needs both ends: one side adds new candidates while the other removes values that have left the window.
 
 **Today's Problems:**
 - [ ] [Implement Stack using Queues](https://leetcode.com/problems/implement-stack-using-queues/) *(Easy)* — Re-queue all but the last element on each pop, or maintain a "rotate" approach.
@@ -278,7 +278,7 @@ Before each problem, ask yourself:
 
 ### Saturday — Deque (Hard)
 
-- [ ] **Morning Review (20 min):** Review Week 2's Sliding Window Maximum (you solved this then). Now re-examine it through the lens of the monotonic deque — the deque stores candidates for the max.
+- [ ] **Morning Review (20 min):** Step 1: Review Sliding Window Maximum from Week 2. Step 2: State what the deque stores: indices of useful candidates for the max. Step 3: Explain why smaller values get removed from the back when a larger value arrives. Step 4: Explain why old indices get removed from the front when they fall out of the window.
 
 **Today's Problems:**
 - [ ] [Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/) *(Hard)* — Revisit with deeper understanding: write out the invariant and trace through `[1,3,-1,-3,5,3,6,7]` with `k=3`.
@@ -289,7 +289,7 @@ Before each problem, ask yourself:
 
 ### Sunday — Week 3 Review
 
-- [ ] **Morning Review (20 min):** Skim Week 3 solutions. Identify 2 hardest.
+- [ ] **Morning Review (20 min):** Step 1: Skim Week 3 solutions. Step 2: Pick the 2 hardest. Step 3: Write whether each one used a plain stack, monotonic stack, or deque. Step 4: Write one sentence on the invariant you forgot or mixed up.
 
 **Tasks:**
 - [ ] Re-solve Largest Rectangle in Histogram and one other hard problem from scratch.
@@ -313,7 +313,7 @@ Before each problem, ask yourself:
 
 ### Monday — Linked List (Easy)
 
-- [ ] **Morning Review (20 min):** Draw a singly linked list on paper. Write the node definition. Practice: given a head pointer, how do you traverse? How do you reverse? The key mental model: *you need to save `node.next` before you overwrite it.*
+- [ ] **Morning Review (20 min):** Step 1: Draw a 4-node singly linked list on paper. Step 2: Write the node definition. Step 3: Trace how you traverse from `head` to `None`. Step 4: For reversal, say the safety rule before coding: save `next` first, then change the pointer.
 
 **Today's Problems:**
 - [ ] [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) *(Easy)* — Iterative: `prev`, `curr`, `next`. Recursive: return the new head from the base case.
@@ -326,7 +326,7 @@ Before each problem, ask yourself:
 
 ### Tuesday — Linked List (Medium)
 
-- [ ] **Morning Review (20 min):** Re-write Reverse Linked List iteratively from memory. Think: what if you needed to reverse only a portion of the list? That's what *Reverse Nodes in K-Group* will require on Thursday.
+- [ ] **Morning Review (20 min):** Step 1: Re-write Reverse Linked List iteratively from memory. Step 2: Label `prev`, `curr`, and `next` on a small drawing. Step 3: Ask what would change if you reversed only a chunk instead of the whole list. Step 4: Answer: you still reverse locally, but now you must reconnect the chunk to the untouched parts.
 
 **Today's Problems:**
 - [ ] [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) *(Medium)* — Simulate grade-school addition; carry = `sum // 10`, digit = `sum % 10`.
@@ -338,7 +338,7 @@ Before each problem, ask yourself:
 
 ### Wednesday — Fast/Slow Pointer (Medium)
 
-- [ ] **Morning Review (20 min):** Recall the fast/slow pointer trick for finding midpoints. Now think: if the list has a cycle, `fast` will lap `slow`. Draw a cycle and show why `fast` and `slow` must meet inside the loop.
+- [ ] **Morning Review (20 min):** Step 1: Recall the fast/slow pointer rule for finding a midpoint. Step 2: Draw a small cycle in a linked list. Step 3: Move `slow` by 1 and `fast` by 2 for a few steps. Step 4: Notice that inside the loop, the faster pointer gains 1 step per round, so it must eventually catch the slower one.
 
 **Today's Problems:**
 - [ ] [Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii/) *(Medium)* — Detect cycle (fast/slow meet); then to find cycle start: reset one pointer to head, advance both one step at a time until they meet.
@@ -350,7 +350,7 @@ Before each problem, ask yourself:
 
 ### Thursday — Linked List (Hard)
 
-- [ ] **Morning Review (20 min):** Re-solve Linked List Cycle II from memory. Then review Reverse Linked List once more — you'll need to reverse sub-lists today.
+- [ ] **Morning Review (20 min):** Step 1: Re-solve Linked List Cycle II from memory. Step 2: Write the moment where the two pointers first meet. Step 3: Restart one pointer at the head and move both one step at a time. Step 4: Say why that leads both pointers to the cycle entrance, then briefly review list reversal because you'll reconnect pointers again today.
 
 **Today's Problems:**
 - [ ] [Merge K Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/) *(Hard)* — Use a min-heap of `(val, listIndex)` pairs. Pop min, advance that list, push next node.
@@ -362,7 +362,7 @@ Before each problem, ask yourself:
 
 ### Friday — Hash Map (Easy/Medium)
 
-- [ ] **Morning Review (20 min):** Recall week 1's Two Sum (hash map for O(n) pairing). Generalize: hash map = trade O(n) space for O(1) average lookup. Write the three use cases: (1) count frequency, (2) group by key, (3) check existence/complement.
+- [ ] **Morning Review (20 min):** Step 1: Recall Week 1's Two Sum and the idea of constant-time lookup. Step 2: Write the trade-off plainly: extra space buys faster lookup. Step 3: List the three common jobs for a hash map: count, group, and check existence. Step 4: For each job, name one problem you have already seen that uses it.
 
 **Today's Problems:**
 - [ ] [Valid Anagram](https://leetcode.com/problems/valid-anagram/) *(Easy)* — Count char frequencies in both strings; compare maps (or use one map: increment for s, decrement for t).
@@ -375,7 +375,7 @@ Before each problem, ask yourself:
 
 ### Saturday — Hash Map (Medium/Hard)
 
-- [ ] **Morning Review (20 min):** Review Group Anagrams. Think about what other things can serve as a hash map key: coordinates, character counts (as tuples), sorted lists, etc. Recall that `defaultdict` and `Counter` (Python) simplify frequency maps.
+- [ ] **Morning Review (20 min):** Step 1: Review Group Anagrams. Step 2: Ask what makes a good hash map key: it must uniquely represent the group you care about. Step 3: List a few options like sorted letters or character-count tuples. Step 4: Remind yourself that helper tools like `defaultdict` or `Counter` reduce bookkeeping, but the key idea is still choosing the right key.
 
 **Today's Problems:**
 - [ ] [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/) *(Medium)* — Add all numbers to a set. Only start counting from numbers with no left neighbor (`n-1` not in set). Count forward.
@@ -387,7 +387,7 @@ Before each problem, ask yourself:
 
 ### Sunday — Week 4 Review
 
-- [ ] **Morning Review (20 min):** Skim Week 4. Identify 2 hardest problems.
+- [ ] **Morning Review (20 min):** Step 1: Skim Week 4. Step 2: Identify the 2 hardest problems. Step 3: Write whether each one was mainly pointer work or hash-map reasoning. Step 4: Write the exact place where you got stuck: key choice, pointer movement, or edge-case handling.
 
 **Tasks:**
 - [ ] Re-solve LRU Cache and one other problem from scratch.
@@ -411,7 +411,7 @@ Before each problem, ask yourself:
 
 ### Monday — Tree DFS (Easy)
 
-- [ ] **Morning Review (20 min):** Draw a binary tree. Write the recursive DFS template: `def dfs(node): if not node: return base_case; left = dfs(node.left); right = dfs(node.right); return combine(left, right, node.val)`. Write the three traversal orders (pre, in, post) and what each is useful for.
+- [ ] **Morning Review (20 min):** Step 1: Draw a small binary tree. Step 2: Write the recursive DFS template. Step 3: Label where the current node is processed in preorder, inorder, and postorder. Step 4: Write one use case for each traversal so the order feels purposeful instead of memorized.
 
 **Today's Problems:**
 - [ ] [Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/) *(Easy)* — At every node: swap left and right children, then recurse.
@@ -424,7 +424,7 @@ Before each problem, ask yourself:
 
 ### Tuesday — Tree DFS (Medium)
 
-- [ ] **Morning Review (20 min):** Re-write Maximum Depth from memory. Now think: what if you need to track the *path* from root to leaf, not just a single value? That means you need to pass information *down* (via parameters) not just return it up.
+- [ ] **Morning Review (20 min):** Step 1: Re-write Maximum Depth from memory. Step 2: Say what information is returned from each child. Step 3: Ask what changes if you need the full path instead of just one number. Step 4: Answer: you must carry path information downward as you recurse, not only combine values on the way back up.
 
 **Today's Problems:**
 - [ ] [Path Sum II](https://leetcode.com/problems/path-sum-ii/) *(Medium)* — Pass current path and remaining target down; add to results when you reach a leaf with target == 0.
@@ -437,7 +437,7 @@ Before each problem, ask yourself:
 
 ### Wednesday — Tree BFS (Easy/Medium)
 
-- [ ] **Morning Review (20 min):** Write the BFS template: `queue = deque([root]); while queue: node = queue.popleft(); process(node); if node.left: queue.append(node.left); if node.right: queue.append(node.right)`. How do you track levels? (snapshot queue size at start of each level)
+- [ ] **Morning Review (20 min):** Step 1: Write the BFS template with a queue. Step 2: Explain that the queue holds the next nodes to visit in level order. Step 3: Ask how to know which nodes belong to the current level. Step 4: Answer: snapshot the queue size before processing that round, then process exactly that many nodes.
 
 **Today's Problems:**
 - [ ] [Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/) *(Medium)* — Use queue; for each level, snapshot size, process that many nodes, collect children.
@@ -449,7 +449,7 @@ Before each problem, ask yourself:
 
 ### Thursday — BST (Medium)
 
-- [ ] **Morning Review (20 min):** Recall BST property: `left.val < node.val < right.val` for all nodes. In-order traversal of a BST gives sorted output. Write: to validate a BST, pass min/max bounds down instead of comparing just with parent.
+- [ ] **Morning Review (20 min):** Step 1: Recall the BST rule: every node must stay within a valid range. Step 2: Write why comparing only with the parent is not enough. Step 3: Write the min/max-bounds idea. Step 4: Connect it to inorder traversal by noting that a valid BST also produces sorted output.
 
 **Today's Problems:**
 - [ ] [Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/) *(Medium)* — DFS with min/max bounds: `dfs(node, min_val, max_val)`. Update bounds when going left/right.
@@ -461,7 +461,7 @@ Before each problem, ask yourself:
 
 ### Friday — Tree (Hard)
 
-- [ ] **Morning Review (20 min):** Review LCA from Tuesday — you'll use similar "return up" logic for Max Path Sum. Think: at each node, the max path through it is `node.val + max(0, leftGain) + max(0, rightGain)`. But you can only use one side when returning up.
+- [ ] **Morning Review (20 min):** Step 1: Review LCA from Tuesday and remember the `return up` idea. Step 2: At a node, compute the best gain from the left and right children. Step 3: Say why negative gains can be treated as 0. Step 4: Separate the two jobs clearly: the global answer may use both sides, but the value returned upward can only use one side.
 
 **Today's Problems:**
 - [ ] [Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/) *(Hard)* — At each node: update global max with `val + leftGain + rightGain`; return `val + max(leftGain, rightGain)` to parent.
@@ -473,7 +473,7 @@ Before each problem, ask yourself:
 
 ### Saturday — Trie (Medium)
 
-- [ ] **Morning Review (20 min):** A Trie is a tree where each node represents a character, and paths from root to marked nodes form valid words. Write the TrieNode structure: `children = {}` (or array of 26), `is_end = False`.
+- [ ] **Morning Review (20 min):** Step 1: Say what a Trie stores: prefixes. Step 2: Draw the words `cat` and `car` sharing the same first two letters. Step 3: Write the TrieNode fields: `children` and `is_end`. Step 4: Explain why shared prefixes save repeated work when many words start the same way.
 
 **Today's Problems:**
 - [ ] [Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/) *(Medium)* — Insert: follow/create nodes for each char. Search: follow nodes, check `is_end`. StartsWith: same but don't check `is_end`.
@@ -485,7 +485,7 @@ Before each problem, ask yourself:
 
 ### Sunday — Week 5 Review
 
-- [ ] **Morning Review (20 min):** Skim Week 5. Pick 2 hardest problems.
+- [ ] **Morning Review (20 min):** Step 1: Skim Week 5. Step 2: Pick the 2 hardest problems. Step 3: Write whether each one was DFS, BFS, BST logic, or Trie work. Step 4: Write the key tree invariant or traversal idea you want to remember next time.
 
 **Tasks:**
 - [ ] Re-solve Binary Tree Maximum Path Sum and one other hard problem from scratch.
@@ -508,7 +508,7 @@ Before each problem, ask yourself:
 
 ### Monday — Graph DFS (Medium)
 
-- [ ] **Morning Review (20 min):** Recall tree DFS. Graphs add one wrinkle: cycles. Write the graph DFS template with a `visited` set: `def dfs(node): visited.add(node); for neighbor in graph[node]: if neighbor not in visited: dfs(neighbor)`. Draw a 4-node graph and trace DFS.
+- [ ] **Morning Review (20 min):** Step 1: Recall tree DFS. Step 2: Name the new graph problem: cycles let you revisit nodes forever. Step 3: Write the DFS template with a `visited` set. Step 4: Draw a 4-node graph and trace where `visited` blocks repeated work.
 
 **Today's Problems:**
 - [ ] [Number of Islands](https://leetcode.com/problems/number-of-islands/) *(Medium)* — For each unvisited '1', run DFS to mark the entire island as visited. Count DFS calls.
@@ -521,7 +521,7 @@ Before each problem, ask yourself:
 
 ### Tuesday — Graph BFS (Medium)
 
-- [ ] **Morning Review (20 min):** Recall BFS on trees (queue). On a graph, BFS gives the **shortest path** in unweighted graphs. Write the template: start with all sources in queue, track `dist` or `steps`, expand neighbors not yet visited.
+- [ ] **Morning Review (20 min):** Step 1: Recall BFS on trees. Step 2: Move that idea to graphs by adding a `visited` set. Step 3: Write that each BFS layer represents one more step from the start. Step 4: Conclude why the first time you reach a node in an unweighted graph, you have found its shortest path.
 
 **Today's Problems:**
 - [ ] [Rotting Oranges](https://leetcode.com/problems/rotting-oranges/) *(Medium)* — Multi-source BFS: start with all rotten oranges; spread to fresh neighbors each step. Answer is total steps.
@@ -533,7 +533,7 @@ Before each problem, ask yourself:
 
 ### Wednesday — Topological Sort (Medium)
 
-- [ ] **Morning Review (20 min):** A directed acyclic graph (DAG) has no cycles. Topological sort = linear ordering where every edge goes from earlier to later. Write Kahn's algorithm: in-degree array + queue of nodes with in-degree 0.
+- [ ] **Morning Review (20 min):** Step 1: Define a DAG as a graph with no directed cycles. Step 2: Restate topological order in plain English: prerequisites must come first. Step 3: Write Kahn's algorithm with an in-degree array and a queue of nodes whose prerequisites are finished. Step 4: Explain why removing a node can unlock its neighbors.
 
 **Today's Problems:**
 - [ ] [Course Schedule](https://leetcode.com/problems/course-schedule/) *(Medium)* — Build adjacency list and in-degree array. BFS (Kahn's): if all nodes are processed, no cycle exists.
@@ -545,7 +545,7 @@ Before each problem, ask yourself:
 
 ### Thursday — Union-Find (Medium)
 
-- [ ] **Morning Review (20 min):** Union-Find (Disjoint Set Union) maintains a collection of disjoint sets. Write the two operations: `find(x)` (returns root of x's component, with path compression) and `union(x, y)` (merges components, using rank to keep tree flat).
+- [ ] **Morning Review (20 min):** Step 1: Say what Union-Find tracks: which items belong to the same group. Step 2: Write `find(x)` as the operation that tells you the group's representative. Step 3: Write `union(x, y)` as the operation that merges two groups. Step 4: Remind yourself that path compression and rank are just speedups that keep repeated queries fast.
 
 **Today's Problems:**
 - [ ] [Number of Connected Components in an Undirected Graph](https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/) *(Medium)* — Initialize n components; for each edge, union the two nodes; if they were in different components, decrement count.
@@ -557,7 +557,7 @@ Before each problem, ask yourself:
 
 ### Friday — Shortest Path (Medium/Hard)
 
-- [ ] **Morning Review (20 min):** Recall BFS gives shortest path for unweighted graphs. For weighted graphs, use **Dijkstra's**: a greedy algorithm using a min-heap. Write: `heap = [(dist, node)]`; pop min-dist node, relax neighbors, push updated distances.
+- [ ] **Morning Review (20 min):** Step 1: Recall that plain BFS works only when every edge costs the same. Step 2: Ask what changes when edges have different weights. Step 3: Write Dijkstra's rule: always expand the currently cheapest unfinished node from a min-heap. Step 4: Explain `relax neighbors` in plain English: if going through this node makes a route cheaper, update it.
 
 **Today's Problems:**
 - [ ] [Network Delay Time](https://leetcode.com/problems/network-delay-time/) *(Medium)* — Dijkstra from source node; answer is max distance across all reachable nodes.
@@ -569,7 +569,7 @@ Before each problem, ask yourself:
 
 ### Saturday — Graph (Hard)
 
-- [ ] **Morning Review (20 min):** Review BFS (Word Ladder), Topological Sort (Course Schedule), and Dijkstra. Think: what would a bidirectional BFS look like for Word Ladder? It searches from both source and target simultaneously, reducing search space from O(b^d) to O(b^(d/2)).
+- [ ] **Morning Review (20 min):** Step 1: Review BFS, Topological Sort, and Dijkstra at a high level. Step 2: For Word Ladder, imagine one search from the start and one from the end. Step 3: Say the simple win: if both frontiers meet in the middle, each side explores less. Step 4: Treat this as a warm-up intuition, not something to fully derive before solving problems.
 
 **Today's Problems:**
 - [ ] [Word Ladder II](https://leetcode.com/problems/word-ladder-ii/) *(Hard)* — BFS to find shortest distance to each word, then DFS/backtrack to reconstruct all shortest paths.
@@ -581,7 +581,7 @@ Before each problem, ask yourself:
 
 ### Sunday — Week 6 Review
 
-- [ ] **Morning Review (20 min):** Skim Week 6. Pick 2 hardest.
+- [ ] **Morning Review (20 min):** Step 1: Skim Week 6. Step 2: Pick the 2 hardest problems. Step 3: Label each one as DFS/BFS, topological sort, Union-Find, or shortest path. Step 4: Write the graph cue you missed the first time.
 
 **Tasks:**
 - [ ] Re-solve Union-Find (write the class from memory) and one other problem.
@@ -604,7 +604,7 @@ Before each problem, ask yourself:
 
 ### Monday — 1D DP (Easy/Medium)
 
-- [ ] **Morning Review (20 min):** Write the DP process: (1) define the state `dp[i]` = answer to subproblem ending at/using i, (2) write the recurrence (transition), (3) initialize base cases, (4) fill in order. Start with Fibonacci as a warm-up: `dp[i] = dp[i-1] + dp[i-2]`.
+- [ ] **Morning Review (20 min):** Step 1: Write the DP recipe: state, transition, base case, fill order. Step 2: Use Fibonacci as the easiest example. Step 3: For each step, say what question `dp[i]` answers. Step 4: Remind yourself that DP works when the big problem is built from overlapping smaller problems.
 
 **Today's Problems:**
 - [ ] [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/) *(Easy)* — `dp[i] = dp[i-1] + dp[i-2]`. Identical to Fibonacci.
@@ -617,7 +617,7 @@ Before each problem, ask yourself:
 
 ### Tuesday — 1D DP (Medium)
 
-- [ ] **Morning Review (20 min):** Re-write House Robber from memory. Then think: what if you have unlimited "coins" and want to make exact change? That's Coin Change. Think about the recurrence before opening the problem.
+- [ ] **Morning Review (20 min):** Step 1: Re-write House Robber from memory. Step 2: Say the choice at each house: rob it and skip one, or skip it. Step 3: Move to Coin Change and ask the same DP question: what smaller answers would help build the current one? Step 4: Try to state the recurrence in words before writing symbols.
 
 **Today's Problems:**
 - [ ] [Coin Change](https://leetcode.com/problems/coin-change/) *(Medium)* — `dp[amount] = min coins to make amount`. For each coin: `dp[i] = min(dp[i], dp[i - coin] + 1)`.
@@ -630,7 +630,7 @@ Before each problem, ask yourself:
 
 ### Wednesday — 1D DP (Medium)
 
-- [ ] **Morning Review (20 min):** Review Coin Change. Think about LIS: `dp[i]` = length of longest increasing subsequence ending at index i. The transition requires a nested loop: for each `j < i`, if `nums[j] < nums[i]`, update `dp[i] = max(dp[i], dp[j] + 1)`.
+- [ ] **Morning Review (20 min):** Step 1: Review Coin Change and notice that `dp[i]` depends on earlier states. Step 2: For LIS, define `dp[i]` in plain English. Step 3: Ask which earlier positions are allowed to connect to `i`: only values smaller than `nums[i]`. Step 4: Explain why you scan all earlier `j` values to find the best chain to extend.
 
 **Today's Problems:**
 - [ ] [Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/) *(Medium)* — O(n²) DP, or O(n log n) with patience sorting (binary search on a `tails` array).
@@ -642,7 +642,7 @@ Before each problem, ask yourself:
 
 ### Thursday — 2D DP (Medium)
 
-- [ ] **Morning Review (20 min):** 2D DP extends the state to a grid: `dp[i][j]` = answer using/ending at row i, col j (or for first i rows and first j cols). Write the template: initialize first row and col, then fill row by row.
+- [ ] **Morning Review (20 min):** Step 1: Say that 2D DP is the same DP idea with two changing inputs instead of one. Step 2: Define what `dp[i][j]` means for the problem in front of you. Step 3: Initialize the easiest row and column first. Step 4: Fill the table in the order that guarantees the cells you need are already computed.
 
 **Today's Problems:**
 - [ ] [Unique Paths](https://leetcode.com/problems/unique-paths/) *(Medium)* — `dp[i][j] = dp[i-1][j] + dp[i][j-1]`. Initialize first row/col to 1.
@@ -654,7 +654,7 @@ Before each problem, ask yourself:
 
 ### Friday — 2D DP (Medium/Hard)
 
-- [ ] **Morning Review (20 min):** Review Unique Paths. Now think about two sequences: `dp[i][j]` = answer using first i chars of s1 and first j chars of s2. Write the LCS recurrence: if `s1[i] == s2[j]`: `dp[i][j] = dp[i-1][j-1] + 1`, else `dp[i][j] = max(dp[i-1][j], dp[i][j-1])`.
+- [ ] **Morning Review (20 min):** Step 1: Review Unique Paths and remember that each cell combines smaller neighboring answers. Step 2: Switch from a grid to two strings. Step 3: Ask what happens when the current characters match: you can extend the subsequence. Step 4: If they do not match, keep the better answer from dropping one character from either side.
 
 **Today's Problems:**
 - [ ] [Longest Common Subsequence](https://leetcode.com/problems/longest-common-subsequence/) *(Medium)* — Classic 2D DP on two strings. Apply the LCS recurrence above.
@@ -666,7 +666,7 @@ Before each problem, ask yourself:
 
 ### Saturday — 2D DP (Hard)
 
-- [ ] **Morning Review (20 min):** Review Edit Distance. These hard DP problems often involve a non-obvious state definition. For Burst Balloons: think about which balloon you pop *last* in a subrange — that's the key insight.
+- [ ] **Morning Review (20 min):** Step 1: Review Edit Distance and remind yourself that state definition is half the battle in hard DP. Step 2: For Burst Balloons, stop thinking about the first balloon popped. Step 3: Ask which choice becomes easier to reason about if everything around it is already settled. Step 4: Answer: choose the balloon popped last in a subrange, because its neighbors are then known.
 
 **Today's Problems:**
 - [ ] [Burst Balloons](https://leetcode.com/problems/burst-balloons/) *(Hard)* — `dp[l][r]` = max coins from bursting all balloons between l and r (exclusive). For each choice of last balloon k: `dp[l][r] = max(dp[l][k] + nums[l]*nums[k]*nums[r] + dp[k][r])`.
@@ -678,7 +678,7 @@ Before each problem, ask yourself:
 
 ### Sunday — Week 7 Review
 
-- [ ] **Morning Review (20 min):** Skim Week 7 solutions. Pick 2 hardest.
+- [ ] **Morning Review (20 min):** Step 1: Skim Week 7 solutions. Step 2: Pick the 2 hardest. Step 3: Write the state definition for each one from memory. Step 4: Write whether the hard part was defining the state, writing the recurrence, or choosing fill order.
 
 **Tasks:**
 - [ ] Re-solve Edit Distance and one other problem from scratch.
@@ -702,7 +702,7 @@ Before each problem, ask yourself:
 
 ### Monday — Heap/Priority Queue (Medium)
 
-- [ ] **Morning Review (20 min):** Write the min-heap and max-heap API in your language. In Python: `heapq` is a min-heap; negate values for max-heap. Key operations: `heappush(h, val)` O(log n), `heappop(h)` O(log n), `h[0]` peek O(1). Recall Merge K Sorted Lists from Week 4 — that was heap usage.
+- [ ] **Morning Review (20 min):** Step 1: Write the min-heap API in your language. Step 2: Write how you simulate a max-heap if needed. Step 3: Recall that push and pop are O(log n) while peek is O(1). Step 4: Connect that to Merge K Sorted Lists: the heap keeps the smallest current candidate ready.
 
 **Today's Problems:**
 - [ ] [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/) *(Medium)* — Min-heap of size k: push each element; if size > k, pop. The heap's root is the kth largest.
@@ -715,7 +715,7 @@ Before each problem, ask yourself:
 
 ### Tuesday — Heap (Hard)
 
-- [ ] **Morning Review (20 min):** Recall the heap API. Think about streaming data — you receive numbers one at a time and must always know the median. Two heaps: a max-heap for the lower half, a min-heap for the upper half.
+- [ ] **Morning Review (20 min):** Step 1: Recall the heap API. Step 2: Split the numbers mentally into a lower half and an upper half. Step 3: Put the lower half in a max-heap and the upper half in a min-heap. Step 4: Say the balancing rule: keep the heaps the same size or off by one so the median is always at the top.
 
 **Today's Problems:**
 - [ ] [Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/) *(Hard)* — Two heaps (max-heap `lo`, min-heap `hi`). Always keep `|lo| - |hi| <= 1`. Median is `lo[0]` or average of both tops.
@@ -727,7 +727,7 @@ Before each problem, ask yourself:
 
 ### Wednesday — Binary Search (Easy/Medium)
 
-- [ ] **Morning Review (20 min):** Write the binary search template with `lo`, `hi`, `mid`. The key: `mid = lo + (hi - lo) // 2` (avoids overflow). Understand the two variants: (1) `lo <= hi` (find exact), (2) `lo < hi` (converge to boundary). When does `lo` update vs `hi`?
+- [ ] **Morning Review (20 min):** Step 1: Write the binary search template with `lo`, `hi`, and `mid`. Step 2: State the invariant: the answer is still inside the current search range. Step 3: Decide whether you are searching for an exact value or a boundary. Step 4: For each comparison, say which half can be safely discarded and why.
 
 **Today's Problems:**
 - [ ] [Binary Search](https://leetcode.com/problems/binary-search/) *(Easy)* — Classic implementation. Practice writing it perfectly.
@@ -740,7 +740,7 @@ Before each problem, ask yourself:
 
 ### Thursday — Binary Search (Medium/Hard)
 
-- [ ] **Morning Review (20 min):** Recall that binary search applies to any *monotonic* search space. The pattern: `lo = minPossible, hi = maxPossible; while lo < hi: mid = ...; if condition(mid): hi = mid; else: lo = mid + 1`. Think: what's the "condition" for Koko Eating Bananas?
+- [ ] **Morning Review (20 min):** Step 1: Recall that binary search works on any monotonic yes/no question. Step 2: Write the search space as all possible eating speeds. Step 3: Ask the condition for Koko: can she finish within `h` hours at this speed? Step 4: Explain that once a speed works, every faster speed also works, which is exactly the monotonic pattern you need.
 
 **Today's Problems:**
 - [ ] [Koko Eating Bananas](https://leetcode.com/problems/koko-eating-bananas/) *(Medium)* — Binary search on eating speed `k`. Condition: can Koko eat all piles in `h` hours at speed `k`?
@@ -752,7 +752,7 @@ Before each problem, ask yourself:
 
 ### Friday — Backtracking (Medium)
 
-- [ ] **Morning Review (20 min):** Backtracking = DFS + undo. Template: `def backtrack(start, current): if base_case: results.append(current[:]); return; for choice in choices[start:]: current.append(choice); backtrack(next_start, current); current.pop()`. The `.pop()` is the "undo" that makes it backtracking.
+- [ ] **Morning Review (20 min):** Step 1: Write the backtracking template. Step 2: Label the three actions: choose, explore, undo. Step 3: Say why the `.pop()` matters: it restores the state before the next choice. Step 4: Treat backtracking as DFS over decisions, not over graph nodes.
 
 **Today's Problems:**
 - [ ] [Subsets](https://leetcode.com/problems/subsets/) *(Medium)* — At each step, choose to include the current element or not. Or: iterate with a start index to avoid duplicates.
@@ -765,7 +765,7 @@ Before each problem, ask yourself:
 
 ### Saturday — Mock Interview Day
 
-- [ ] **Morning Review (20 min):** Review the Pattern Recognition Cheat Sheet. For each pattern, recall: (1) recognition cue, (2) algorithm, (3) time/space complexity, (4) one example problem. This is your pre-interview ritual.
+- [ ] **Morning Review (20 min):** Step 1: Review the Pattern Recognition Cheat Sheet. Step 2: For each pattern, say the cue that should trigger it. Step 3: Name the algorithm and its usual time/space complexity. Step 4: Attach one example problem so the pattern is tied to something concrete.
 
 **Tasks:**
 - [ ] **Mock Problem 1 (45 min timer):** Pick one of: [Random Medium on LeetCode](https://leetcode.com/problems/random-one-question-from-medium/), [Combination Sum II](https://leetcode.com/problems/combination-sum-ii/), or [Pacific Atlantic Water Flow](https://leetcode.com/problems/pacific-atlantic-water-flow/). Write your approach first (2 min), code it, test with examples.
@@ -778,7 +778,7 @@ Before each problem, ask yourself:
 
 ### Sunday — Full Mock Interview Day
 
-- [ ] **Morning Review (20 min):** Skim your mistake log from all 8 weeks. Write down the top 5 patterns you're least confident in. Mentally rehearse: *"I see [cue], so I'll try [pattern], which works because [reason]."*
+- [ ] **Morning Review (20 min):** Step 1: Skim your mistake log from all 8 weeks. Step 2: Write the top 5 patterns you still mix up. Step 3: For each one, fill in the sentence `I see [cue], so I'll try [pattern], because [reason]`. Step 4: Keep this quick and confidence-building — the goal is recall, not grinding new theory.
 
 **Tasks:**
 - [ ] **Mock Interview Part 1 (45 min):** Pick a random medium — write your full approach out loud (or in comments) before coding. Treat it like a real interview: no hints, no peeking.
